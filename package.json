@@ -3,18 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "sh ./build/dev.sh",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ant-design-vue": "^1.7.8",
     "core-js": "^3.6.5",
+    "echarts": "^5.3.1",
+    "moment": "^2.29.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
+    "vue-echarts": "^6.0.2",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-class": "^0.3.2"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
@@ -28,6 +34,7 @@
     "@vue/cli-plugin-unit-mocha": "~4.5.15",
     "@vue/cli-plugin-vuex": "~4.5.15",
     "@vue/cli-service": "~4.5.15",
+    "@vue/composition-api": "^1.4.9",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.0.3",
@@ -57,7 +64,9 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {},
+    "rules": {
+      "@typescript-eslint/explicit-module-boundary-types": [0]
+    },
     "overrides": [
       {
         "files": [

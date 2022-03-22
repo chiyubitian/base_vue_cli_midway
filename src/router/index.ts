@@ -1,23 +1,35 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
+import Antd from "../views/Antd.vue";
+import VueChart from "../views/VueChart.vue";
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+export const routes: Array<RouteConfig> = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
+    props: {
+      icon: "home",
+    },
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/antd",
+    name: "antd",
+    component: Antd,
+    props: {
+      icon: "appstore",
+    },
+  },
+  {
+    path: "/vueChart",
+    name: "vueChart",
+    component: VueChart,
+    props: {
+      icon: "line-chart",
+    },
   },
 ];
 
